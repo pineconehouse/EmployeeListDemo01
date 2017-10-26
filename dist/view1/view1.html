@@ -1,0 +1,40 @@
+<header class="header">
+    <span class="header-title">Employee list demo for CRM Factory (Product by Rison Han)</span>
+</header>
+
+<div >
+
+    <form class="pure-form pure-form-stacked">
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <label>Search: </label>
+                <input type="text" class="pure-u-1-1" ng-model="queryVal" />
+            </div>
+        </div>
+    </form>
+
+    <div class="pure-g" style="margin-top:-25px;">
+        <div class="pure-u-1-1">
+            <table id="tbl" class="pure-table pure-table-horizontal">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="biorow{{$index}}" ng-click="showBIO(employee, $index)"  ng-repeat="employee in employeeList">
+                    <td><img ng-src="static/img/employee/{{employee.thumb}}" class="pure-img" /></td>
+                    <td>{{employee.firstName}}</td>
+                    <td>{{employee.lastName}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="thumbdiv" style="display:none;">
+        <img id="headphoto" style="margin-left:5px;margin-top:4px;background-color: dimgrey;" src="">
+    </div>
+</div>
